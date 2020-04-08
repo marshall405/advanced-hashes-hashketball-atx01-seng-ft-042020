@@ -59,7 +59,7 @@ def team_colors(team_name)
   elsif game[:away] == team_name
     return game[:away][:colors]
   else
-    "Team not found"
+    return "Team not found"
   end
 end
 
