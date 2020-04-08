@@ -64,12 +64,11 @@ def team_colors(team_name)
 end
 
 def team_names
-  teams = []
-  game_hash.each do |team|
-    puts team[:team_name]
-  end
-  binding.pry
-  teams
+  [
+    game_hash[:home][:team_name],
+    game_hash[:away][:team_name]
+  ]
+  
 end
 
 def get_player_stat(player_name, stat)
