@@ -14,7 +14,7 @@ def game_hash
     },
     :away => {
       :team_name => "Charlotte Hornets",
-      :colors => ["Turqoise", "Purple"],
+      :colors => ["Turquoise", "Purple"],
       :players => [
         player(%w[Jeff\ Adrien 4 18 10 1 1 2 7 2]),
         player(%w[Bismack\ Biyombo 0 16 12 4 7 22 15 10]),
