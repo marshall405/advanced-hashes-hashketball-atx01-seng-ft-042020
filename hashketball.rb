@@ -76,19 +76,19 @@ def player_numbers(team_name)
 end
 
 def player_stats(player_name)
-  player = {}
+  player_stat = {}
   game_hash.each do |key, value|
     value[:players].each do |player|
       if player[:player_name] == player_name
         player.each do |player_key, stat|
           if player_key != :player_name
-            player[player_key] = stat
+            player_stat[player_key] = stat
           end
         end
       end
     end
   end
-  player
+  player_stat
 end
 
 
