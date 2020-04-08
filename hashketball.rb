@@ -136,6 +136,7 @@ def player_with_longest_name
       if length > name_length
         name_length = length
         player_name = name
+      end
     end
   end
   player_name
