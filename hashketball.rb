@@ -48,8 +48,19 @@ def num_points_scored(player_name)
 end
 
 def shoe_size(player_name)
+ get_player_stat(player_name, :shoe) || "Player not found"
+end
 
-
+def team_colors(team_name)
+  game = game_hash
+  
+  if game[:home] == team_name
+    return game[:home][:colors]
+  elsif game[:away] == team_name
+    return game[:away][:colors]
+  else
+    "Team not found"
+  end
 end
 
 
