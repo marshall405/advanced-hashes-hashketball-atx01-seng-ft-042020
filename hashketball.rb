@@ -68,6 +68,7 @@ def player_numbers(team_name)
   game = game_hash
   
   game.each do |team|
+    binding.pry
     if team[:team_name] == team_name
       team[:players].each do |player|
         numbers << player[:number]
