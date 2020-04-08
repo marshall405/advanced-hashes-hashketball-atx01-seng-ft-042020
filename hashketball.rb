@@ -102,7 +102,7 @@ def player_with_largest_shoe_size
     game_value[:players].each do |player|
       if player[:shoe] > shoe_size
         shoe_size = player[:shoe]
-        return_playerplayer = player
+        return_player = player
       end
     end
   end
