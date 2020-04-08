@@ -75,34 +75,22 @@ def player_numbers(team_name)
   numbers
 end
 
-# def player_stats(player_name)
-#   player_stat = {}
-#   game_hash.each do |key, value|
-#     value[:players].each do |player|
-#       if player[:player_name] == player_name
-#         player.each do |player_key, stat|
-#           if player_key != :player_name
-#             player_stat[player_key] = stat
-#           end
-#         end
-#       end
-#     end
-#   end
-#   player_stat
-# end
-
 def player_stats(player_name)
-  game_hash.reduce({}) do |memo, (key,value)|
+  player_stat = {}
+  game_hash.each do |key, value|
     value[:players].each do |player|
       if player[:player_name] == player_name
-        player.each do |player_key, player_stat|
+        player.each do |player_key, stat|
           if player_key != :player_name
-            player_key => player_stat
+            player_stat[player_key] = stat
           end
         end
       end
+    end
   end
+  player_stat
 end
+
 
 def get_team_stats(team_name, stat)
   game = game_hash
