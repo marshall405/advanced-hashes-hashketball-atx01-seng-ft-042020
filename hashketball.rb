@@ -1,4 +1,5 @@
 # Write your code here!
+require "pry"
 def game_hash
   {
     :home => {
@@ -67,6 +68,7 @@ def team_names
   game_hash.each do |team|
     teams << team[:team_name]
   end
+  binding.pry
   teams
 end
 
