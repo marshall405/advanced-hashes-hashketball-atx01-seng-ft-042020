@@ -66,7 +66,7 @@ end
 def team_names
   teams = []
   game_hash.each do |team|
-    teams << team[:team_name]
+    puts team
   end
   binding.pry
   teams
