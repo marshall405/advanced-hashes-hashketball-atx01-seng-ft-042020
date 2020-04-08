@@ -65,8 +65,7 @@ end
 
 def player_numbers(team_name)
   numbers = []
-  game = game_hash
-  game.each do |key, team_value|
+  game_hash.each do |key, team_value|
     if team_value[:team_name] == team_name
       team_value[:players].each do |player|
         numbers << player[:number]
