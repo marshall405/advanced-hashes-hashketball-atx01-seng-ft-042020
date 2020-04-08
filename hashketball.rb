@@ -126,6 +126,21 @@ def winning_team
   home_points > away_points ? game[:home][:team_name] : game[:away][:team_name]
 end
 
+def player_with_longest_name
+  name_length = 0 
+  player_name = ""
+  game_hash.each do |key,value|
+    value[:players].each do |player|
+      length = player[:player_name].length
+      name = player[:player_name]
+      if length > name_length
+        name_length = length
+        player_name = name
+    end
+  end
+  player_name
+end
+
 def player_with_largest_shoe_size
   shoe_size = 0 
   return_player = ""
