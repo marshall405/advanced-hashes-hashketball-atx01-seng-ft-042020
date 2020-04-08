@@ -108,7 +108,7 @@ def most_points_scored
       end
     end
   end
-  home_points > away_points ? game[:home] : game[:away]
+  home_points > away_points ? game[:home][:team_name] : game[:away][:team_name]
 end
 
 
