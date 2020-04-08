@@ -75,6 +75,17 @@ def player_numbers(team_name)
   numbers
 end
 
+def player_stats(player_name)
+  game_hash.each do |key, value|
+    value[:players].each do |player|
+      if player == player_name
+        return player
+      end
+    end
+  end
+end
+
+
 def get_team_stats(team_name, stat)
   game = game_hash
    if game[:home][:team_name] == team_name
