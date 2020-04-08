@@ -142,6 +142,29 @@ def player_with_longest_name
   player_name
 end
 
+def long_name_steals_a_ton?
+  longest_name = player_with_longest_name
+  longest_name_steals = 0 
+  game = game_hash
+  
+  game.each do |key,value|
+    value[:players].each do |player|
+      if player[:player_name] == longest_name
+        longest_name_steals = player[:steals]
+      end
+    end
+  end
+  
+  game.each do |key,value|
+    value[:players].each do |player|
+      if player[:steals] > longest_name_steals
+        return false 
+      end
+    end
+  end
+  return true 
+end
+
 def player_with_largest_shoe_size
   shoe_size = 0 
   return_player = ""
