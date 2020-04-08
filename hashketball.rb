@@ -98,8 +98,8 @@ end
 def most_points_scored
   home_points = 0 
   away_points = 0 
-  
-  game_hash.each do |key, value|
+  game = game_hash
+  game.each do |key, value|
     value[:players].each do |player|
       if key == :home 
         home_points += player[:points]
@@ -108,7 +108,7 @@ def most_points_scored
       end
     end
   end
-  home_points > away_points ? home_points : away_points
+  home_points > away_points ? game[:home] : game[:away]
 end
 
 
