@@ -68,6 +68,7 @@ def player_numbers(team_name)
 end
 
 def get_team_stats(team_name, stat)
+  game = game_hash
    if game[:home][:team_name] == team_name
     return game[:home][stat]
   elsif game[:away][:team_name] == team_name
