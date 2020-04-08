@@ -81,7 +81,7 @@ def player_stats(player_name)
     value[:players].each do |player|
       if player[:player_name] == player_name
         player.each do |player_key, stat|
-          if key != :player_name
+          if player_key != :player_name
             player[player_key] = stat
           end
         end
