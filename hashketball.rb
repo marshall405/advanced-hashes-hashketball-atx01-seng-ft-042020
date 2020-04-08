@@ -96,6 +96,21 @@ def big_shoe_rebounds
 end
 
 def most_points_scored
+  points = 0 
+  player_with_most_points = ""
+  
+  game_hash.each do |key, value|
+    value[:players].each do |player|
+      if player[:points] > points 
+        points = player[:points]
+        player_with_most_points = player[:player_name]
+      end
+    end
+  end
+  player_with_most_points
+end
+
+def winning_team
   home_points = 0 
   away_points = 0 
   game = game_hash
@@ -110,7 +125,6 @@ def most_points_scored
   end
   home_points > away_points ? game[:home][:team_name] : game[:away][:team_name]
 end
-
 
 def player_with_largest_shoe_size
   shoe_size = 0 
