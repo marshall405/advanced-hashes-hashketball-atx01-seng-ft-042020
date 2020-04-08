@@ -44,19 +44,7 @@ end
 
 
 def num_points_scored(player_name)
-  stats = game_hash
-  
-  stats[:home][:players].each do |player|
-    if player[:player_name] == player_name
-      return player[:points]
-    end
-  end
-  stats[:away][:players].each do |player|
-    if player[:player_name] == player_name
-      return player[:points]
-    end
-  end
-  "Player not found"
+  get_player_stat(player_name, :points) || "Player not found"
 end
 
 def shoe_size(player_name)
