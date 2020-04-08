@@ -97,7 +97,7 @@ def player_stats(player_name)
       if player[:player_name] == player_name
         player.each do |player_key, player_stat|
           if player_key != :player_name
-            memo[player_key] = player_stat
+            player_key => player_stat
           end
         end
       end
