@@ -53,14 +53,7 @@ def shoe_size(player_name)
 end
 
 def team_colors(team_name)
-  game = game_hash
-  if game[:home][:team_name] == team_name
-    return game[:home][:colors]
-  elsif game[:away][:team_name] == team_name
-    return game[:away][:colors]
-  else
-    return "Team not found"
-  end
+  get_team_stats(team_name, :colors) || "Team not found"
 end
 
 def team_names
@@ -68,7 +61,18 @@ def team_names
     game_hash[:home][:team_name],
     game_hash[:away][:team_name]
   ]
+end
+
+def player_numbers(team_name)
   
+end
+
+def get_team_stats(team_name, stat)
+   if game[:home][:team_name] == team_name
+    return game[:home][stat]
+  elsif game[:away][:team_name] == team_name
+    return game[:away][stat]
+  end
 end
 
 def get_player_stat(player_name, stat)
